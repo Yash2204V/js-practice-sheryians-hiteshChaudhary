@@ -8,15 +8,21 @@
 </head>
 
 <body style="background-color: black; color: wheat;">
-    <div class="bg-black">
-        <h1 id="title" class="heading">DOM Learning with Chai aur Code</h1>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <ul>
-            <li>one</li>
-            <li>two</li>
-            <li>three</li>
-        </ul>
-    </div>
+
 </body>
+<script>
+    let div = document.createElement("div");
+    div.style.backgroundColor = 'green';
+    div.style.padding = '30px';
+    div.style.color = "white";
+    div.id = Math.round(Math.random()*10 + 1);
+    // div.innerText = "Something is there";
+    var nodeText = document.createTextNode("Something is there");
+    div.appendChild(nodeText);
+    div.setAttribute("title", "generated title");
+    document.body.appendChild(div);
+    console.log(div);
+    
+</script>
 
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation 4</title>
+</head>
+<body style="background-color: #212121; color: wheat;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const myLi = document.createElement("li");
+        myLi.innerText = langName;
+        document.querySelector(".language").appendChild(myLi);
+        // Traversing the whole ul.
+    }
+    addLanguage("Python");
+    addLanguage("Typescript");
+    
+    function optAddLanguage(langName){
+        const myLi = document.createElement("li");
+        myLi.appendChild(document.createTextNode(langName));
+        document.querySelector(".language").appendChild(myLi);
+        // optimized approach
+    }
+    addLanguage("Rust");
+
+
+    // Editing 
+
+    const secondLang = document.querySelector("li:nth-child(2)");
+    
+    // secondLang.innerHTML = "chalbe";    #AamZindagi
+    const newLi1 = document.createElement("li");
+    newLi1.textContent = "C++";
+    secondLang.replaceWith(newLi1); //     #MentosZindagi
+    
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = '<li>C</li>';
+
+    // Removing
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove();
+
+</script>
+
+</html>
